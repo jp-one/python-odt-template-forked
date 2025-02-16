@@ -1,0 +1,7 @@
+pytest
+pytest-cov
+
+defusedxml
+jinja2
+markdown2
+unoserver
