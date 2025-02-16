@@ -39,7 +39,7 @@
                 "pip3",
                 "install",
                 "--upgrade",
-                ".[chart,fodt]",
+                ".[standard]",
                 "--root-user-action=ignore" // Suppress WARNING
             ],
             "options": {
