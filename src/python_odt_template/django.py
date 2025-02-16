@@ -1,5 +1,7 @@
 from python_odt_template.renderer import ODTRenderer
 
+from pathlib import Path
+
 from .filters import odt_markdown
 from .filters import pad_string
 from django import template
@@ -14,11 +16,13 @@ register = template.Library()
 @register.filter
 def image(value):
     try:
-        static_path = settings.STATICFILES_DIRS[0]
+        static_path = Path(settings.STATICFILES_DIRS[0]).resolve()
     except IndexError as e:
         msg = "You must add a least one directory to STATICFILES_DIRS in your settings.py file"
         raise ImproperlyConfigured(msg) from e
-    return static_path / value
+    file_path = static_path.joinpath(value).resolve()
+    file_path.relative_to(static_path)   # validate subpath
+    return file_path
 
 
 register.filter("odt_markdown", odt_markdown)
