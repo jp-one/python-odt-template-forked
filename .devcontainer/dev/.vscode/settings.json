@@ -1,0 +1,8 @@
+{
+    "python.envFile": "${workspaceFolder}/code/.devcontainer/dev/pythonpath.env",
+    "python.testing.pytestArgs": [
+        "."
+    ],
+    "python.testing.pytestEnabled": true,
+    "python.testing.unittestEnabled": false
+}

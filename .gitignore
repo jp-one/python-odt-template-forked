@@ -168,3 +168,9 @@ cython_debug/
 #.idea/
 
 .DS_Store
+
+# unoserver - custom fonts
+!/.devcontainer/unoserver/customfonts
+/.devcontainer/unoserver/customfonts/*
+!/.devcontainer/unoserver/customfonts/.gitkeep
+/samples/outputs
